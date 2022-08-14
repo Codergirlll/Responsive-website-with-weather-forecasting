@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title>Weather App</title>
+</head>
+<body>
+    
+  {{>navbar}}
+
+
+    <div class="container-fluid main-header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <div class="col-md-12 col-12 main-header-left align-items-center">
+                        <figure class="errimg">
+                            <img src="images/404.png" alt="Himani" class="img-fluid" title="Himani Gangwar ">
+                        </figure>
+                        
+                        <h1>{{errorMessage}}</h1>
+                        <a href="/"><button> Back </button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{>footer}}
+
+</body>
+</html>

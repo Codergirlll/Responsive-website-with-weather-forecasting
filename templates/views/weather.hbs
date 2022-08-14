@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>header}}
+  
+  <title>Weather App</title>
+</head>
+<body>
+    {{>navbar}}
+
+    <div class="container-fluid main-header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                
+                <div class="main-contain">
+                    <form class="temp-form">
+                        <input type="text" id="cityName" placeholder="Please Enter Your City Name" autocomplete="off">
+                        <input type="submit" id="submitBtn" value="search">
+                    </form>
+                </div>
+
+                <div class="tempInformation">
+                    <div class="top-layer">
+                        <p id="day"> Friday</p>
+                        <p id="date">12 Aug</p>
+                    </div>
+                    <div class="main-layer">
+                        <p id="city_name"> Get Current Temperature Here</p>
+
+                       <div class="middle-layer data_hide"> 
+                                <p ><span id="temp">0</span><sup>o</sup>C</p>
+                                <p id="status"> <i class="fa-solid fa-cloud"></i></p>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{>footer}}
+
+<script src="js/main.js"></script>
+
+<script>
+
+const day = document.getElementById('day');
+const date = document.getElementById('date');
+
+const Day = () => {
+        const weekday=["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+    let current_day = new Date();
+    let day = weekday[current_day.getDay()];
+    return day;
+    };
+    const Date_ = () => {
+        var months = ["Jan","Feb","Mar","Apr","May", "June","July","Aug","Sep","Oct","Nov", "Dec" ];
+
+        let current_date = new Date();
+
+        let month = months[current_date.getMonth() ];
+        let date= current_date.getDate();
+
+        let hour= current_date.getHours();
+        let mins = current_date.getMinutes();
+
+        let periods ="AM";
+
+        if (hour > 11) {
+          periods = "PM";
+          if (hour > 12) hour -= 12;
+        }
+        if (mins < 10) {
+          mins = "0" + mins;
+        }
+        return `${date} ${month} | ${hour}:${mins} ${periods}`;
+    };
+    day.innerText = Day();
+    date.innerText = Date_();
+</script>
+
+   </body>
+</html>

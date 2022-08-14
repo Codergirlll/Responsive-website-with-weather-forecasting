@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,100;8..30,300;8..30,400;8..30,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "piazzolla", "serif";
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+:root{
+    --main-bg: #1e271e;
+    --main-color: #0097e6;
+}
+html{
+    font-size: 62.5%;
+}
+.row{
+    margin: 0;
+}
+.main-menu{
+    background-color: var(--main-bg);
+}
+.navbar{
+    color: #fff;
+    background-color: var(--main-bg);
+    padding: 2rem 0;
+}
+.navbar a{
+    color: #fff;
+    font-size: 1.8rem;
+}
+.navbar a:hover{
+    color: var(--main-color);
+}
+.navbar toggler{
+    background-color: gray;
+}
+.fa-snowflake{
+    transition: all linear;
+    animation: rot 2s linear infinite;
+    color: var(--main-color);
+}
+@keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.main-header-left{
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main-header-left p{
+    font-size: 2rem;;
+}
+.main-header-left h1{
+    font-size: 4rem;
+    margin: 1rem 0 4rem 0;
+    text-transform: capitalize;
+}
+.main-header-left h1 .text_clr{
+    color: blue;
+}
+.main-header-left button{
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px #000;
+    outline: none;
+}
+.main-header-left button:hover{
+    box-shadow: 0 8px 6px -6px var(--main-color);
+}
+.main-header-right{
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main-header-right figure img{
+ filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.3));
+}
+.temp-form{
+    width: auto;
+    position: relative;
+    margin: 6rem auto;
+}
+.temp-form input[type="text"]{
+    width: 99%;
+    padding: 1rem 1rem 1rem 1rem;
+    background: #babdcb;
+    color: #df4a1e;
+    border: none;
+    font-size: 1.8rem;
+    border-radius: 6rem;
+    margin-top: -7%;
+    margin-bottom: 0%;
+}
+.temp-form input[type="submit"]{
+    position: absolute;
+    top: -13px;
+    right: 19px;
+    bottom: 5px;
+    border: none;
+    background-color: #0097e6;
+    padding: 0 2rem;
+    border-radius: 3rem;
+    color: white;
+    font-size: 1.8rem;
+}
+.temp-form input[type="submit"]:hover{
+    color: #0097e6;
+    background-color: white;
+}
+
+footer{
+    width: 100%;
+    background-color: var(--main-bg);
+    margin-top: auto
+}
+footer p{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    line-height: 5rem;
+    font-size: 1.4rem;
+}
+
+/* responsive code */
+
+@media (max-width : 768px){
+    .main-header-left{
+        height: auto;
+        margin: 5rem 0;
+    }
+    .main-header-right{
+        height: auto;
+        margin-top: 3rem;
+    }
+}
+
+/* error page styling */
+.errimg{
+    width: 30rem;
+    height: 18rem;
+}
+
+/* temp style */
+
+.tempInformation{
+    width: auto;
+    margin: auto;
+    min-height: 24rem;
+    background-color: #6d78ac;
+    color: wheat;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: "Roboto",sans-serif;
+    font-size: x-large;
+}
+.top-layer{
+    height: 20%;
+    background-color: #8590bb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3rem;
+}
+.top-layer p{
+    color: #fff;
+    font-weight: 100;
+    padding: 2rem;
+}
+.main-layer{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.main-layer #city_name{
+    padding: 2rem 2rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+}
+.main-layer .middle-layer{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.main-layer .middle-layer p span,
+.main-layer .middle-layer .fa{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.main-layer .middle-layer p sup {
+    font-size: 3rem;
+    margin-top: 9rem;
+}
+.fa{
+    color: #0097e6;
+}
+sup{
+    font-size: 6rem;
+    margin-top: -2rem;
+}
+.data_hide{
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
